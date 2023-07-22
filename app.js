@@ -30,6 +30,10 @@ const app = Vue.createApp({
       console.log(this.enterGoalValue);
       this.goals.push(this.enterGoalValue)
       this.enterGoalValue = ""
+    },
+    removeGoal(index) {
+      console.log(index);
+      this.goals.splice(index, 1)
     }
   },
   computed: {
