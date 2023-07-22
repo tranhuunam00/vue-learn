@@ -26,9 +26,9 @@
       <button @click="selectedButton('A')" :class="['demo', {active: selectedA}]">A</button>
       <p v-if="goals.length === 0">No goals have been added</p>
       <ul v-else>
-        <li>1</li>
+        <li v-for="goal in goals">{{goal}}</li>
       </ul>
-      <input type="text" placeholder="addGoal" v:model="enterGoalValue">
+      <input type="text" placeholder="addGoal" v-model="enterGoalValue">
       <button @click="addGoal">ADDG</button>
     </section>
   </body>

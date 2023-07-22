@@ -26,6 +26,8 @@ const app = Vue.createApp({
       this["selected" + box] = !this["selected" + box]
     },
     addGoal() {
+      console.log(this.goals);
+      console.log(this.enterGoalValue);
       this.goals.push(this.enterGoalValue)
       this.enterGoalValue = ""
     }
