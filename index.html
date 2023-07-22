@@ -21,8 +21,11 @@
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Schwarzmüller')">
+      <input type="text" v-model="name">
       <p>Your Name: {{ fullName }}</p>
+      <button @click="selectedButton('A')" :class="['demo', {active: selectedA}]">A</button>
+      <button @click="selectedButton('B')" class="demo">B</button>
+      <button @click="selectedButton('C')" class="demo">C</button>
     </section>
   </body>
 </html>

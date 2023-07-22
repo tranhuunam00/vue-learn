@@ -2,7 +2,11 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      selectedA: false,
+      selectedB: false,
+      selectedC: false,
+      
     };
   },
   methods: {
@@ -15,6 +19,9 @@ const app = Vue.createApp({
     reduce(num) {
       this.counter = this.counter - num;
       // this.counter--;
+    },
+    selectedButton(box) {
+      this["selected" + box] = !this["selected" + box]
     }
   },
   computed: {
