@@ -6,6 +6,8 @@ const app = Vue.createApp({
       selectedA: false,
       selectedB: false,
       selectedC: false,
+      goals: [],
+      enterGoalValue: ""
       
     };
   },
@@ -22,6 +24,10 @@ const app = Vue.createApp({
     },
     selectedButton(box) {
       this["selected" + box] = !this["selected" + box]
+    },
+    addGoal() {
+      this.goals.push(this.enterGoalValue)
+      this.enterGoalValue = ""
     }
   },
   computed: {

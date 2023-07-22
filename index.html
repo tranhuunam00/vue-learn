@@ -24,8 +24,12 @@
       <input type="text" v-model="name">
       <p>Your Name: {{ fullName }}</p>
       <button @click="selectedButton('A')" :class="['demo', {active: selectedA}]">A</button>
-      <button @click="selectedButton('B')" class="demo">B</button>
-      <button @click="selectedButton('C')" class="demo">C</button>
+      <p v-if="goals.length === 0">No goals have been added</p>
+      <ul v-else>
+        <li>1</li>
+      </ul>
+      <input type="text" placeholder="addGoal" v:model="enterGoalValue">
+      <button @click="addGoal">ADDG</button>
     </section>
   </body>
 </html>
