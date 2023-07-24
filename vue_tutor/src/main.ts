@@ -1,18 +1,16 @@
-import './assets/main.css'
+import { createApp } from 'vue';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import App from './App.vue';
+import ActiveElement from './components/ActiveElement.vue';
+import KnowledgeBase from './components/KnowledgeBase.vue';
+import KnowledgeElement from './components/KnowledgeElement.vue';
+import KnowledgeGrid from './components/KnowledgeGrid.vue';
 
-import App from './App.vue'
-import FriendContact from './components/FriendContact.vue'
-import NewFriend from './components/NewFriend.vue'
+const app = createApp(App);
 
+app.component('active-element', ActiveElement);
+app.component('knowledge-base', KnowledgeBase);
+app.component('knowledge-element', KnowledgeElement);
+app.component('knowledge-grid', KnowledgeGrid);
 
-const app = createApp(App)
-app.component('friend-contact', FriendContact)
-app.component('new-friend', NewFriend)
-
-
-app.use(createPinia())
-
-app.mount('#app')
+app.mount('#app');
